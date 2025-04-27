@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+.main-box{
+  margin-top: 108px;
+  background-color: #1A1A1A;
+  border-radius: 32px;
+  width: 100%;
+  height: 528px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+  padding: 64px;
+
+  .box-main-title{
+    font-weight: 600;
+    font-size: 60px;
+    color: #FFFFFF;
+  }
+
+  .box-sub-title{
+    margin-top: 18px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ACACAC;
+  }
+
+  .download-box{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 44px;
+    background: #FFFFFF33;
+    backdrop-filter: blur(8px);
+    padding: 4px 4px 4px 20px;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #FFFFFF;
+    .download-btn{
+      background: #CEF24B;
+      border-radius: 8px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .icon {
+        width: 20px;
+        height: 20px;
+        background: url("@/assets/image/rightArrow.png") center/cover no-repeat;
+      }
+    }
+  }
+}
+
+
+.box-intro-groups{
+  display: flex;
+  gap: 16px;
+  .box-intro-item{
+    width:  calc(33% - 10px);
+    height: 260px;
+    background: #FFFFFF;
+    border-radius: 24px;
+    &.rocket{
+
+    }
+  }
+}

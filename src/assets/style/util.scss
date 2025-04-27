@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+@for $i from 1 through 1920{
+  .w#{$i}{
+    width: #{$i}px !important;
+  }
+  .h#{$i}{
+    height: #{$i}px !important;
+  }
+  .p#{$i}{
+    padding: #{$i}px !important;
+  }
+  .pl#{$i}{
+    padding-left: #{$i}px !important;
+  }
+  .pr#{$i}{
+    padding-right: #{$i}px !important;
+  }
+  .pt#{$i}{
+    padding-top: #{$i}px !important;
+  }
+  .pb#{$i}{
+    padding-bottom: #{$i}px !important;
+  }
+
+  .ml#{$i}{
+    margin-left: #{$i}px !important;
+  }
+  .mr#{$i}{
+    margin-right: #{$i}px !important;
+  }
+  .mt#{$i}{
+    margin-top: #{$i}px !important;
+  }
+  .mb#{$i}{
+    margin-bottom: #{$i}px !important;
+  }
+
+  .fs#{$i}{
+    font-size: #{$i}px !important;
+  }
+  .fw#{$i}{
+    font-weight: #{$i}!important;
+  }
+
+  .gap#{$i}{
+    gap: #{$i}px!important;
+  }
+}
+
+.row{
+  display: flex;
+}
+
+.ta-c{
+  text-align: center;
+}
+
+.c1A1A1A{
+  color: #1A1A1A;
+}
+
+.c383838{
+  color: #383838;
+}
