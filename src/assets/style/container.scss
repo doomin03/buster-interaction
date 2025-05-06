@@ -7,8 +7,20 @@
 }
 
 .container-content {
-  width: 1152px;
+  width: 100%;
   margin: 0 auto;
+
+  @media (max-width: 1151px) {
+    width: 726px;
+  }
+
+  @media (min-width: 1152px) {
+    width: 1152px;
+  }
+
+  @media (max-width: 726px) {
+    width: 358px;
+  }
 }
 
 
