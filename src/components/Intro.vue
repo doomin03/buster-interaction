@@ -5,11 +5,11 @@
                 <div class="icon"></div>
             </div>
             <div class="header-nav" v-if="!mobile">
-                <div class="nav-item">About</div>
-                <div class="nav-item">Vision</div>
-                <div class="nav-item">Features</div>
-                <div class="nav-item">Values</div>
-                <div class="nav-item">FAQ</div>
+                <div class="nav-item" @click="moveSection(0)">About</div>
+                <div class="nav-item" @click="moveSection(1)">Vision</div>
+                <div class="nav-item" @click="moveSection(2)">Features</div>
+                <div class="nav-item" @click="moveSection(3)">Values</div>
+                <div class="nav-item" @click="moveSection(4)">FAQ</div>
             </div>
             <button class="download-btn">앱 다운로드</button>
             <div class="menu-icon" v-if="mobile">
@@ -434,7 +434,17 @@ export default {
 
         },
 
+        moveSection(index) {
+            let scrollY = 0;
+            for (let i = 0; i < index; i++) {
+                scrollY += this.scrollInfo[i].height;
+            }
 
+            window.scrollTo({
+                top: scrollY,
+                behavior: 'smooth'
+            });
+        }
     },
 };
 </script>
