@@ -11,7 +11,7 @@
             주소| 충청남도 아산시 배방읍 호서로79번길 20, 호서벤처밸리 303호
           </div>
         </div>
-        <div class="footer-nav">
+        <div class="footer-nav" v-if="!none">
           <div>Buster</div>
           <div>About</div>
           <div>Vision</div>
@@ -28,5 +28,10 @@
 <script>
 export default {
   name: "Footer",
+    computed: {
+        none(){
+            return window.innerWidth < 1152;
+        }
+    }
 }
 </script>
