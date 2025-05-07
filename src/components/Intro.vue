@@ -403,7 +403,7 @@ export default {
                 this.scrollInfo = [
                     {container: '', heightNum: 2.4, height: 0},
                     {container: '', heightNum: 2, height: 0},
-                    {container: '', heightNum: 3, height: 0},
+                    {container: '', heightNum: 2.5, height: 0},
                     {container: '', heightNum: 1, height: 0},
                     {container: '', heightNum: 1.7, height: 0},
                 ];
@@ -427,7 +427,7 @@ export default {
                 ];
             }
             for (let i = 0; i < this.scrollInfo.length; i++) {
-                this.scrollInfo[i].height = window.innerHeight * this.scrollInfo[i].heightNum;
+                this.scrollInfo[i].height = 830 * this.scrollInfo[i].heightNum;
                 this.scrollInfo[i].container = document.getElementById(`section-${i}`);
                 this.scrollInfo[i].container.style.height = this.scrollInfo[i].height + 'px';
             }
