@@ -34,6 +34,7 @@
                         <div class="icon"></div>
                     </button>
                 </div>
+                <div class="bus"></div>
             </div>
 
             <div class="mt192">
