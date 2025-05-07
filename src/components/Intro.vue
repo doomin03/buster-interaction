@@ -346,7 +346,7 @@ export default {
     },
     methods: {
         setLayout() {
-            this.mobile = window.innerWidth < 1000;
+            this.mobile = window.innerWidth < 1152;
 
             if (window.innerWidth < 726) {
                 this.scrollInfo = [
