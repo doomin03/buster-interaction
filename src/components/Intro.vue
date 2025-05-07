@@ -410,7 +410,7 @@ export default {
             }
             else if(window.innerWidth < 1151){
                 this.scrollInfo = [
-                    {container: '', heightNum: 2, height: 0},
+                    {container: '', heightNum: 2.2, height: 0},
                     {container: '', heightNum: 2, height: 0},
                     {container: '', heightNum: 1.5, height: 0},
                     {container: '', heightNum: 0.8, height: 0},
