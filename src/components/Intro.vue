@@ -339,6 +339,7 @@ export default {
         this.setLayout();
         window.addEventListener("scroll", this.handleScroll);
         window.addEventListener("resize", this.setLayout);
+        this.handleScroll();
     },
     unmounted() {
         window.removeEventListener("scroll", this.handleScroll);
@@ -391,14 +392,6 @@ export default {
 
         handleScroll() {
             this.offsetY = window.scrollY;
-
-            // const activateVisibleElements = (selector) => {
-            //     document.querySelectorAll(selector).forEach((el) => {
-            //         const rect = el.getBoundingClientRect();
-            //         const isVisible = rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
-            //         el.classList.toggle('active', isVisible);
-            //     });
-            // };
 
             const section2 = document.getElementById('section-2');
             if (section2) {
