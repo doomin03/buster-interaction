@@ -80,7 +80,7 @@
         </div>
 
         <div id="section-1" class="section">
-            <div class="vision-section" :class="{'active' : currentSceneOffsetY > 0.0 || activeIndex > 1}">
+            <div class="vision-section" :class="{'active' : currentSceneOffsetY > 0.0 && activeIndex >= 1}">
                 <div class="vision-logo">Buster Vision</div>
                 <div class="vision-title">
                     <div class="message main ta-s" :class="{'active' : currentSceneOffsetY > 0.1 && activeIndex >= 1}">
@@ -257,7 +257,7 @@
 
             <div class="question-group">
 
-                <div class="question-1" :class="{'active' : currentSceneOffsetY > 0.3 && activeIndex > 3}">
+                <div class="question-1" :class="{'active' : activeIndex > 3}">
                     <div class="main-title">혼잡도 정보는 어떻게 수집되나요?</div>
                     <div class="sub-title">
                         사용자들이 실시간으로 입력하는 정보와 공공
@@ -265,7 +265,7 @@
                     </div>
                 </div>
 
-                <div class="question-2" :class="{'active' : currentSceneOffsetY > 0.3  && activeIndex > 3}">
+                <div class="question-2" :class="{'active' :  activeIndex > 3}">
                     <div class="main-title">정류장 정보는 얼마나 정확한가요?</div>
                     <div class="sub-title">
                         매일 업데이트되는 실시간 교통 데이터를
@@ -273,7 +273,7 @@
                     </div>
                 </div>
 
-                <div class="question-3" :class="{'active' : currentSceneOffsetY > 0.3  && activeIndex > 3 }">
+                <div class="question-3" :class="{'active' : activeIndex > 3 }">
                     <div class="main-title">결제는 어떻게 하나요?</div>
                     <div class="sub-title">
                         버스터 내 통합 결제 시스템을 통해
@@ -281,7 +281,7 @@
                     </div>
                 </div>
 
-                <div class="question-1" :class="{'active' : currentSceneOffsetY > 0.5  && activeIndex > 3}">
+                <div class="question-1" :class="{'active' : activeIndex > 3}">
                     <div class="main-title">스케줄 알림은 어떤 기능인가요?</div>
                     <div class="sub-title">
                         도착 시간을 미리 입력해두면, 교통 상황을
@@ -289,7 +289,7 @@
                     </div>
                 </div>
 
-                <div class="question-2" :class="{'active' : currentSceneOffsetY > 0.5  && activeIndex > 3}">
+                <div class="question-2" :class="{'active' : activeIndex > 3}">
                     <div class="main-title">개인화된 추천도 가능한가요?</div>
                     <div class="sub-title">
                         사용자의 이용 패턴을 분석해,
@@ -297,7 +297,7 @@
                     </div>
                 </div>
 
-                <div class="question-3" :class="{'active' : currentSceneOffsetY > 0.5  && activeIndex > 3}">
+                <div class="question-3" :class="{'active' : activeIndex > 3}">
                     <div class="main-title">위치 정보는 어떻게 활용되나요?</div>
                     <div class="sub-title">
                         정확한 경로 안내를 위해 사용자의 위치 정보가 활용
@@ -366,7 +366,7 @@ export default {
     methods: {
         handleScroll() {
             // this.viewOffsetY = window.scrollY + window.innerHeight;
-            this.viewOffsetY = window.scrollY + window.innerHeight / 2;
+            this.viewOffsetY = window.scrollY + 830 / 2;
             this.offsetY = window.scrollY;
             this.prevSceneHeight = 0;
             for (let i = 0; i < this.activeIndex; i++) {
