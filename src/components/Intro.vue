@@ -388,18 +388,10 @@ export default {
             const activateVisibleElements = (selector) => {
                 document.querySelectorAll(selector).forEach((el) => {
                     const rect = el.getBoundingClientRect();
-                    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                    const isVisible = rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
                     el.classList.toggle('active', isVisible);
                 });
             };
-
-            for (let i = 0; i < this.scrollInfo.length; i++) {
-                const el = this.scrollInfo[i].container;
-                if (!el) continue;
-                const rect = el.getBoundingClientRect();
-                const isVisible = rect.top < window.innerHeight * 0.75 && rect.bottom > 0;
-                el.classList.toggle('active', isVisible);
-            }
 
             const section2 = document.getElementById('section-2');
             if (section2) {
