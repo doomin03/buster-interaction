@@ -381,17 +381,24 @@ export default {
             }
 
         },
+        activateVisibleElements(selector) {
+            document.querySelectorAll(selector).forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
+                el.classList.toggle('active', isVisible);
+            });
+        },
 
         handleScroll() {
             this.offsetY = window.scrollY;
 
-            const activateVisibleElements = (selector) => {
-                document.querySelectorAll(selector).forEach((el) => {
-                    const rect = el.getBoundingClientRect();
-                    const isVisible = rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
-                    el.classList.toggle('active', isVisible);
-                });
-            };
+            // const activateVisibleElements = (selector) => {
+            //     document.querySelectorAll(selector).forEach((el) => {
+            //         const rect = el.getBoundingClientRect();
+            //         const isVisible = rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
+            //         el.classList.toggle('active', isVisible);
+            //     });
+            // };
 
             const section2 = document.getElementById('section-2');
             if (section2) {
@@ -401,21 +408,21 @@ export default {
             }
 
 
-            activateVisibleElements('.message');
-            activateVisibleElements('.vision-section');
-            activateVisibleElements('.vision-message');
-            activateVisibleElements('.people');
-            activateVisibleElements('.rocket');
-            activateVisibleElements('.setting');
-            activateVisibleElements('.phone1, .phone2, .phone3, .phone4');
-            activateVisibleElements('.person');
-            activateVisibleElements('.carbon');
-            activateVisibleElements('.happy');
-            activateVisibleElements('.subway');
-            activateVisibleElements('.technology');
-            activateVisibleElements('.experience');
-            activateVisibleElements('.time');
-            activateVisibleElements('.question-1, .question-2, .question-3');
+            this.activateVisibleElements('.message');
+            this.activateVisibleElements('.vision-section');
+            this.activateVisibleElements('.vision-message');
+            this.activateVisibleElements('.people');
+            this.activateVisibleElements('.rocket');
+            this.activateVisibleElements('.setting');
+            this.activateVisibleElements('.phone1, .phone2, .phone3, .phone4');
+            this.activateVisibleElements('.person');
+            this.activateVisibleElements('.carbon');
+            this.activateVisibleElements('.happy');
+            this.activateVisibleElements('.subway');
+            this.activateVisibleElements('.technology');
+            this.activateVisibleElements('.experience');
+            this.activateVisibleElements('.time');
+            this.activateVisibleElements('.question-1, .question-2, .question-3');
         },
 
         moveSection(index) {
