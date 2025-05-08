@@ -5,7 +5,8 @@
   margin: 0 auto;
 
   @media (max-width: 1151px) {
-    width: 726px;
+    max-width: 100%;
+    padding: 8px;
   }
 
   @media (min-width: 1152px) {
@@ -13,7 +14,8 @@
   }
 
   @media (max-width: 726px) {
-    width: 358px;
+    max-width: 100%;
+    padding: 11px;
   }
 }
 

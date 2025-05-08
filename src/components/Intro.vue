@@ -5,11 +5,11 @@
                 <div class="icon"></div>
             </div>
             <div class="header-nav" v-if="!mobile">
-                <div class="nav-item" @click="moveSection(0)">About</div>
-                <div class="nav-item" @click="moveSection(1)">Vision</div>
-                <div class="nav-item" @click="moveSection(2)">Features</div>
-                <div class="nav-item" @click="moveSection(3)">Values</div>
-                <div class="nav-item" @click="moveSection(4)">FAQ</div>
+                <button class="nav-item" @click="moveSection(0)">About</button>
+                <button class="nav-item" @click="moveSection(1)">Vision</button>
+                <button class="nav-item" @click="moveSection(2)">Features</button>
+                <button class="nav-item" @click="moveSection(3)">Values</button>
+                <button class="nav-item" @click="moveSection(4)">FAQ</button>
             </div>
             <button class="download-btn">앱 다운로드</button>
             <div class="menu-icon" v-if="mobile">
@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <div class="rocket">
-                    <div class="main-message">언제, 어디서든 빠르게</div>
+                    <div class="main-message">바쁜 출근시간, 효율적으로</div>
                     <div class="sub-message">
                         알림 스케줄 설정으로
                         대중교통 도착시간을 알림 받아
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="setting">
-                    <div class="main-message">언제, 어디서든 빠르게</div>
+                    <div class="main-message">알뜰한 리워드 적립</div>
                     <div class="sub-message">
                         보상형 광고를 시청하거나,
                         승하차 정보를 입력하여 리워드를
@@ -76,9 +76,9 @@
                 <div class="vision-logo">Buster Vision</div>
                 <div class="vision-title">
                     <div class="message main ta-s">
-                        혁신으로 만들어가는지속 가능한 미래
+                        혁신으로 만들어가는 지속 가능한 미래
                     </div>
-                    <div class="message sub ta-e">
+                    <div class="message sub ta-s">
                         버스터는 환경과 사회를 고려한 스마트한 선택으로,
                         더 나은 내일을 위한 변화를 이끌어갑니다.
                     </div>
@@ -139,8 +139,8 @@
             </div>
         </div>
 
-        <div id="section-2" class="section">
-            <div class="message main pt192">
+        <div id="section-2" class="section pt192">
+            <div class="message main">
                 똑똑한 이동,
             </div>
             <div class="message main">
@@ -288,11 +288,16 @@
         </div>
 
     </div>
+    <Footer :move-section="moveSection"></Footer>
 </template>
 
 <script>
+import Footer from "@/footer.vue"
 export default {
     name: "Intro",
+    components: {
+        Footer,
+    },
     data() {
         return {
             activeIndex: 0,
@@ -351,16 +356,16 @@ export default {
             if (window.innerWidth < 726) {
                 this.scrollInfo = [
                     {container: '', heightNum: 2.4, height: 0},
-                    {container: '', heightNum: 2, height: 0},
+                    {container: '', heightNum: 1.8, height: 0},
                     {container: '', heightNum: 2.7, height: 0},
-                    {container: '', heightNum: 1, height: 0},
-                    {container: '', heightNum: 1.7, height: 0},
+                    {container: '', heightNum: 0.7, height: 0},
+                    {container: '', heightNum: 1.5, height: 0},
                 ];
             }
             else if(window.innerWidth < 1151){
                 this.scrollInfo = [
                     {container: '', heightNum: 2.2, height: 0},
-                    {container: '', heightNum: 2, height: 0},
+                    {container: '', heightNum: 1.8, height: 0},
                     {container: '', heightNum: 1.5, height: 0},
                     {container: '', heightNum: 0.8, height: 0},
                     {container: '', heightNum: 0.9, height: 0},
@@ -369,10 +374,10 @@ export default {
             else {
                 this.scrollInfo = [
                     {container: '', heightNum: 1.5, height: 0,},
-                    {container: '', heightNum: 1.5, height: 0,},
                     {container: '', heightNum: 1.8, height: 0,},
-                    {container: '', heightNum: 0.5, height: 0,},
-                    {container: '', heightNum: 0.8, height: 0,},
+                    {container: '', heightNum: 2.1, height: 0,},
+                    {container: '', heightNum: 0.6, height: 0,},
+                    {container: '', heightNum: 0.9, height: 0,},
                 ];
             }
             for (let i = 0; i < this.scrollInfo.length; i++) {
@@ -380,12 +385,12 @@ export default {
                 this.scrollInfo[i].container = document.getElementById(`section-${i}`);
                 this.scrollInfo[i].container.style.height = this.scrollInfo[i].height + 'px';
             }
-
+            this.handleScroll();
         },
         activateVisibleElements(selector) {
             document.querySelectorAll(selector).forEach((el) => {
                 const rect = el.getBoundingClientRect();
-                const isVisible = rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
+                const isVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
                 el.classList.toggle('active', isVisible);
             });
         },

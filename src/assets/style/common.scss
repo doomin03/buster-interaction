@@ -13,7 +13,6 @@ html, body, #app {
     min-height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
-    min-width: 400px;
 }
 
 
@@ -94,6 +93,7 @@ button {
     }
 
     .menu-icon {
+        cursor: pointer;
         background: #FFFFFF;
         border-radius: 12px;
         width: 48px;
@@ -128,32 +128,41 @@ button {
     }
 
     @media (max-width: 1151px) {
-        width: 726px;
+        left: 8px;
+        right: 8px;
+        width: auto;
+        transform: none;
         gap: 4px;
         .download-btn {
             margin-left: auto;
         }
         &.active {
-            width: 726px;
+            left: 8px;
+            right: 8px;
+            width: auto;
         }
     }
 
     @media (max-width: 726px) {
-        width: 358px;
+        left: 11px;
+        right: 11px;
+        width: auto;
+        transform: none;
         gap: 4px;
         .download-btn {
             margin-left: auto;
         }
         &.active {
-            width: 358px;
+            left: 11px;
+            right: 11px;
+            width: auto;
         }
     }
 }
 
 .footer {
     width: 100%;
-    padding-block: 64px;
-    padding-inline: 64px;
+    padding: 64px;
     border-radius: 32px;
     background-color: #1A1A1A;
 
@@ -195,29 +204,51 @@ button {
         flex-direction: column;
         gap: 12px;
         padding-left: 32px;
-        font-size: 14px;
-        font-weight: 500;
-        color: #FFFFFF;
+
+        .title{
+            font-size: 14px;
+            font-weight: 500;
+            color: #A7A7A7;
+        }
+        .link-item{
+            font-size: 14px;
+            font-weight: 500;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
     }
 
     .divider {
-        width: 100%;
+        width: 1152px;
+        margin: 0 auto;
         height: 1px;
         background-color: #383838;
         margin: 64px auto 0;
     }
 
     @media (max-width: 726px) {
+        padding: 28px 18px;
         .info-groups {
             width: 100%;
+            display: block;
         }
         .footer-nav{
             display: none;
+        }
+        .divider{
+            display: none;
+        }
+        .info-column{
+            .info-text{
+                margin-top: 44px;
+                font-size: 13px;
+            }
         }
     }
     @media (max-width: 1151px) {
-        .footer-nav{
-            display: none;
+        .info-groups{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
     }
 }

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "project_common.scss";
+@use "project_common.scss" as *;
 
 .main-box {
     background-color: #1A1A1A;
@@ -75,6 +75,7 @@
             width: 323px;
             height: 244px;
             top: 40%;
+            right: -21px;
         }
     }
     @media (max-width: 725px) {
@@ -134,6 +135,16 @@
     &.sub{
         font-size: 18px;
         color: #383838;
+    }
+
+    @media (max-width: 1151px) {
+        .main{
+            font-size: 36px;
+            overflow-wrap: break-word;
+        }
+    }
+    @media (max-width: 726px) {
+        margin-top: 16px;
     }
 }
 
@@ -287,6 +298,15 @@
             flex-direction: column;
             gap: 16px;
 
+            .happy {
+                @include container(#F8FFDD, 24, 0.3);
+                height: 187px;
+
+                .sub-title {
+                    margin-top: 10px;
+                }
+            }
+
             .person {
                 @include image-container("@/assets/image/vision1.png", #F5F4F6, 0.6428, 0.3);
             }
@@ -350,7 +370,7 @@
         @include value-card(#4FC4F9, #E1F5FE, 0.4);
     }
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1152px) {
         display: flex;
         flex-direction: column;
         gap: 16px;
