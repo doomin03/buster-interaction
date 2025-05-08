@@ -58,7 +58,7 @@
         }
     }
 
-    .bus{
+    .bus {
         background: url("@/assets/image/bus.png") center/cover no-repeat;
         position: absolute;
         width: 538px;
@@ -66,16 +66,17 @@
         right: -89px;
         top: 20%;
     }
+
     @media (min-width: 600px) and (max-width: 1023px) {
         padding: 34px;
         .box-main-title {
             font-size: 48px;
         }
-        .bus{
+        .bus {
             width: 323px;
             height: 244px;
             top: 40%;
-            right: -21px;
+            right: -33px;
         }
     }
     @media (max-width: 590px) {
@@ -89,7 +90,7 @@
         .download-box {
             width: 100%;
         }
-        .bus{
+        .bus {
             top: 20%;
             right: -28px;
             width: 212px;
@@ -119,7 +120,9 @@
         @include intro-box('@/assets/image/setting.png', 0.4);
     }
 
-
+    @media (max-width: 590px) {
+        flex-direction: column;
+    }
     @media (min-width: 600px) and (max-width: 1023px) {
         flex-direction: column;
     }
@@ -127,18 +130,20 @@
 
 .message {
     @include message();
-    &.main{
+
+    &.main {
         font-weight: 700;
         font-size: 48px;
         color: #1A1A1A;
     }
-    &.sub{
+
+    &.sub {
         font-size: 18px;
         color: #383838;
     }
 
     @media (min-width: 600px) and (max-width: 1023px) {
-        .main{
+        .main {
             font-size: 36px;
             overflow-wrap: break-word;
         }
@@ -282,7 +287,7 @@
                 padding: 24px;
             }
 
-            .subway{
+            .subway {
                 @include image-container("@/assets/image/vision3.png", #F5F4F6, 0.3071, 0.3);
             }
         }
@@ -368,6 +373,11 @@
 
     .time {
         @include value-card(#4FC4F9, #E1F5FE, 0.4);
+    }
+    @media (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
     }
 
     @media (min-width: 600px) and (max-width: 1023px) {
