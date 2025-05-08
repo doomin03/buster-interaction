@@ -66,7 +66,7 @@
         right: -89px;
         top: 20%;
     }
-    @media (max-width: 1152px) {
+    @media (min-width: 600px) and (max-width: 1023px) {
         padding: 34px;
         .box-main-title {
             font-size: 48px;
@@ -78,7 +78,7 @@
             right: -21px;
         }
     }
-    @media (max-width: 725px) {
+    @media (max-width: 590px) {
         padding: 34px;
         .box-main-title {
             font-size: 32px;
@@ -120,7 +120,7 @@
     }
 
 
-    @media (max-width: 1150px) {
+    @media (min-width: 600px) and (max-width: 1023px) {
         flex-direction: column;
     }
 }
@@ -137,13 +137,13 @@
         color: #383838;
     }
 
-    @media (max-width: 1151px) {
+    @media (min-width: 600px) and (max-width: 1023px) {
         .main{
             font-size: 36px;
             overflow-wrap: break-word;
         }
     }
-    @media (max-width: 726px) {
+    @media (max-width: 590px) {
         margin-top: 16px;
     }
 }
@@ -263,7 +263,7 @@
 
     }
 
-    @media (max-width: 1151px) {
+    @media (min-width: 600px) and (max-width: 1023px) {
         .vision-title {
             grid-template-columns: 285px 245px;
         }
@@ -287,7 +287,7 @@
             }
         }
     }
-    @media (max-width: 726px) {
+    @media (max-width: 590px) {
         padding: 32px;
         .vision-title {
             display: block;
@@ -346,7 +346,7 @@
         @include introduce-container("@/assets/image/phone4.png");
     }
 
-    @media (max-width: 726px) {
+    @media (max-width: 590px) {
         display: flex;
         flex-direction: column;
         gap: 24px;
@@ -370,7 +370,7 @@
         @include value-card(#4FC4F9, #E1F5FE, 0.4);
     }
 
-    @media (max-width: 1152px) {
+    @media (min-width: 600px) and (max-width: 1023px) {
         display: flex;
         flex-direction: column;
         gap: 16px;
@@ -395,7 +395,7 @@
         @include question-box(0.4);
     }
 
-    @media (max-width: 726px) {
+    @media (max-width: 590px) {
         display: flex;
         flex-direction: column;
         gap: 64px;

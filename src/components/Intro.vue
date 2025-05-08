@@ -12,7 +12,7 @@
                 <button class="nav-item" @click="moveSection(4)">FAQ</button>
             </div>
             <button class="download-btn">앱 다운로드</button>
-            <div class="menu-icon" v-if="mobile">
+            <div class="menu-icon" v-if="mobile" @click="showMenu">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -335,6 +335,7 @@ export default {
 
             mobile: false,
 
+            menu : false,
         };
     },
     created() {
@@ -353,33 +354,35 @@ export default {
         setLayout() {
             this.mobile = window.innerWidth < 1152;
 
-            if (window.innerWidth < 726) {
+            if (window.innerWidth < 600) {
+                // 모바일
                 this.scrollInfo = [
-                    {container: '', heightNum: 2.4, height: 0},
-                    {container: '', heightNum: 1.8, height: 0},
-                    {container: '', heightNum: 2.7, height: 0},
-                    {container: '', heightNum: 0.7, height: 0},
-                    {container: '', heightNum: 1.5, height: 0},
+                    { container: '', heightNum: 2.4, height: 0 },
+                    { container: '', heightNum: 1.8, height: 0 },
+                    { container: '', heightNum: 2.7, height: 0 },
+                    { container: '', heightNum: 0.7, height: 0 },
+                    { container: '', heightNum: 1.5, height: 0 },
+                ];
+            } else if (window.innerWidth < 1024) {
+                // 태블릿
+                this.scrollInfo = [
+                    { container: '', heightNum: 2.2, height: 0 },
+                    { container: '', heightNum: 1.8, height: 0 },
+                    { container: '', heightNum: 1.5, height: 0 },
+                    { container: '', heightNum: 0.8, height: 0 },
+                    { container: '', heightNum: 0.9, height: 0 },
+                ];
+            } else {
+                // 데스크탑
+                this.scrollInfo = [
+                    { container: '', heightNum: 1.5, height: 0 },
+                    { container: '', heightNum: 1.8, height: 0 },
+                    { container: '', heightNum: 2.1, height: 0 },
+                    { container: '', heightNum: 0.6, height: 0 },
+                    { container: '', heightNum: 0.9, height: 0 },
                 ];
             }
-            else if(window.innerWidth < 1151){
-                this.scrollInfo = [
-                    {container: '', heightNum: 2.2, height: 0},
-                    {container: '', heightNum: 1.8, height: 0},
-                    {container: '', heightNum: 1.5, height: 0},
-                    {container: '', heightNum: 0.8, height: 0},
-                    {container: '', heightNum: 0.9, height: 0},
-                ];
-            }
-            else {
-                this.scrollInfo = [
-                    {container: '', heightNum: 1.5, height: 0,},
-                    {container: '', heightNum: 1.8, height: 0,},
-                    {container: '', heightNum: 2.1, height: 0,},
-                    {container: '', heightNum: 0.6, height: 0,},
-                    {container: '', heightNum: 0.9, height: 0,},
-                ];
-            }
+
             for (let i = 0; i < this.scrollInfo.length; i++) {
                 this.scrollInfo[i].height = 830 * this.scrollInfo[i].heightNum;
                 this.scrollInfo[i].container = document.getElementById(`section-${i}`);
@@ -433,6 +436,14 @@ export default {
                 top: scrollY,
                 behavior: 'smooth'
             });
+        },
+
+        showMenu(){
+            if(this.menu){
+                this.menu = false;
+                return;
+            }
+            this.menu = true;
         }
     },
 };
