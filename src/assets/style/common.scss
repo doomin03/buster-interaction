@@ -27,11 +27,27 @@ button {
 
 
 .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8.5px;
     font-weight: 500;
     font-size: 14px;
     text-align: center;
     padding: 14px 16px;
     color: #202020;
+    &.menu{
+        color: #ffffff !important;
+    }
+    &.active{
+        &::before{
+            content: "";
+            display: inline-block;
+            background: #ffffff;
+            width: 3px;
+            height: 3px;
+            border-radius: 100px;
+        }
+    }
 }
 
 .header {
@@ -39,87 +55,118 @@ button {
     top: 28px;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     z-index: 10;
 
-    &.active {
-        top: 12px;
-        width: 593px;
-        height: 56px;
-        background-color: rgba(26, 26, 26, 0.5);
-        border-radius: 16px;
-        padding-inline: 4px;
-        gap: 4px;
-
-        .header-nav {
-            background-color: #1A1A1A;
-            border-radius: 12px;
-
-            .nav-item {
-                color: #fff;
-            }
-        }
-
-        .download-btn {
-            background-color: #FFFFFF;
-            color: #1A1A1A;
-        }
-    }
-
-    .header-logo {
-        background-color: #1A1A1A;
-        border-radius: 12px;
-        width: 48px;
-        height: 48px;
+    .header-top{
+        max-width: 1152px;
+        margin: 0 auto;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        .icon {
-            width: 24px;
-            height: 24px;
-            background: url("@/assets/image/logo.png") center/cover no-repeat;
+        &.active {
+            top: 12px;
+            width: 593px;
+            height: 56px;
+            background-color: rgba(26, 26, 26, 0.5);
+            border-radius: 16px;
+            padding-inline: 4px;
+            gap: 4px;
+
+            .header-nav {
+                background-color: #1A1A1A;
+                border-radius: 12px;
+
+                .nav-item {
+                    color: #fff;
+                }
+            }
+
+            .download-btn {
+                background-color: #FFFFFF;
+                color: #1A1A1A;
+            }
+
+
+            @media (max-width: 726px) {
+                width: 100%;
+            }
+        }
+
+        .header-logo {
+            background-color: #1A1A1A;
+            border-radius: 12px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .icon {
+                width: 24px;
+                height: 24px;
+                background: url("@/assets/image/logo.png") center/cover no-repeat;
+            }
+        }
+
+        .header-nav {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .menu-icon {
+            cursor: pointer;
+            background: #FFFFFF;
+            border-radius: 12px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+            padding: 16px 12px;
+            cursor: pointer;
+
+            .bar {
+                height: 2px;;
+                background-color: #000;
+                border-radius: 1px;
+            }
+        }
+
+        .download-btn {
+            background-color: #1A1A1A;
+            width: 142px;
+            height: 48px;
+            border-radius: 12px;
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 18px;
+            text-align: center;
         }
     }
 
-    .header-nav {
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-    }
-
-    .menu-icon {
-        cursor: pointer;
-        background: #FFFFFF;
+    .header-bottom{
+        margin-top: 36px;
+        background: #1A1A1A;
         border-radius: 12px;
-        width: 48px;
-        height: 48px;
+        padding: 12px;
         display: flex;
-        gap: 5px;
         flex-direction: column;
-        padding: 16px 12px;
-        cursor: pointer;
-
-        .bar {
-            height: 2px;;
-            background-color: #000;
-            border-radius: 1px;
-        }
+        justify-content: start;
+        align-items: start;
     }
 
-    .download-btn {
-        background-color: #1A1A1A;
-        width: 142px;
-        height: 48px;
-        border-radius: 12px;
-        color: #FFFFFF;
-        font-weight: 700;
-        font-size: 18px;
-        text-align: center;
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
+        linear-gradient(0deg, #F5F4F6, #F5F4F6);
     }
 
 

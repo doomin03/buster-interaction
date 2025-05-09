@@ -1,21 +1,31 @@
 <template>
     <div class="container-content">
-        <div class="header" :class="{'active': offsetY >= 100}">
-            <div class="header-logo">
-                <div class="icon"></div>
+<!--        <div v-if="menu" class="overlay"></div>-->
+        <div class="header" >
+            <div class="header-top" :class="{'active': offsetY >= 100}">
+                <div class="header-logo">
+                    <div class="icon"></div>
+                </div>
+                <div class="header-nav" v-if="!mobile">
+                    <button class="nav-item" @click="moveSection(0)">About</button>
+                    <button class="nav-item" @click="moveSection(1)">Vision</button>
+                    <button class="nav-item" @click="moveSection(2)">Features</button>
+                    <button class="nav-item" @click="moveSection(3)">Values</button>
+                    <button class="nav-item" @click="moveSection(4)">FAQ</button>
+                </div>
+                <button class="download-btn">앱 다운로드</button>
+                <div class="menu-icon" v-if="mobile" @click="showMenu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
             </div>
-            <div class="header-nav" v-if="!mobile">
-                <button class="nav-item" @click="moveSection(0)">About</button>
-                <button class="nav-item" @click="moveSection(1)">Vision</button>
-                <button class="nav-item" @click="moveSection(2)">Features</button>
-                <button class="nav-item" @click="moveSection(3)">Values</button>
-                <button class="nav-item" @click="moveSection(4)">FAQ</button>
-            </div>
-            <button class="download-btn">앱 다운로드</button>
-            <div class="menu-icon" v-if="mobile" @click="showMenu">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
+            <div class="header-bottom" v-if="menu " >
+                <button class="nav-item menu" :class="{'active' : activeIndex==0}" @click="moveSection(0)">About</button>
+                <button class="nav-item menu" :class="{'active' : activeIndex==1}" @click="moveSection(1)">Vision</button>
+                <button class="nav-item menu" :class="{'active' : activeIndex==2}" @click="moveSection(2)">Features</button>
+                <button class="nav-item menu" :class="{'active' : activeIndex==3}" @click="moveSection(3)">Values</button>
+                <button class="nav-item menu" :class="{'active' : activeIndex==4}" @click="moveSection(4)">FAQ</button>
             </div>
         </div>
 
@@ -409,6 +419,7 @@ export default {
             }
 
 
+
             this.activateVisibleElements('.message');
             this.activateVisibleElements('.vision-section');
             this.activateVisibleElements('.vision-message');
@@ -424,6 +435,7 @@ export default {
             this.activateVisibleElements('.experience');
             this.activateVisibleElements('.time');
             this.activateVisibleElements('.question-1, .question-2, .question-3');
+            this.showSection();
         },
 
         moveSection(index) {
@@ -444,6 +456,24 @@ export default {
                 return;
             }
             this.menu = true;
+        },
+
+        showSection(){
+            const sections = document.querySelectorAll('[id^="section-"]');
+            const viewportHeight = window.innerHeight;
+
+            for (let i = 0; i < sections.length; i++) {
+                const rect = sections[i].getBoundingClientRect();
+                const isVisible = rect.top < viewportHeight / 2 && rect.bottom > viewportHeight / 2;
+
+                if (isVisible) {
+                    if (this.activeIndex !== i) {
+                        this.activeIndex = i;
+                        console.log('activeIndex:', this.activeIndex);
+                    }
+                    break;
+                }
+            }
         }
     },
 };
