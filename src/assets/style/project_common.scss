@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@mixin image-container($img-path : null, $color, $ratio, $delay) {
+@mixin image-container($img-path : null, $color, $ratio, $delay, $position: center) {
     opacity: 0;
     flex: 1;
     padding: 24px;
@@ -9,7 +9,7 @@
     .image {
         border-radius: 8px;
         @if ($img-path != null) {
-            background: url(#{$img-path}) center/cover no-repeat;
+            background: url('#{$img-path}') #{$position} / cover no-repeat;
             aspect-ratio: 1 / #{$ratio};
         } @else {
             display: none;
@@ -164,6 +164,9 @@
         font-weight: 700;
         font-size: 18px;
         color: #1A1A1A;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        white-space: normal;
     }
 
     .sub-title {
@@ -171,6 +174,9 @@
         font-weight: 400;
         font-size: 16px;
         color: #383838;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        white-space: normal;
     }
     &.active {
         opacity: 1;

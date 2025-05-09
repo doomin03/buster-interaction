@@ -1,6 +1,6 @@
 <template>
     <div class="container-content">
-<!--        <div v-if="menu" class="overlay"></div>-->
+        <div v-if="menu" class="overlay"></div>
         <div class="header" >
             <div class="header-top" :class="{'active': offsetY >= 100}">
                 <div class="header-logo">
@@ -86,7 +86,7 @@
                 <div class="vision-logo">Buster Vision</div>
                 <div class="vision-title">
                     <div class="message main ta-s">
-                        혁신으로 만들어가는 지속 가능한 미래
+                        혁신으로 <br> 만들어가는 지속 가능한 미래
                     </div>
                     <div class="message sub ta-s">
                         버스터는 환경과 사회를 고려한 스마트한 선택으로,
@@ -237,7 +237,7 @@
             <div class="message main">
                 자주 묻는 질문
             </div>
-            <div class="message sub">
+            <div class="message sub mt18">
                 버스터에 대해 자주 물어보는 질문들을 정리했어요.
             </div>
             <div class="message sub">
@@ -378,7 +378,7 @@ export default {
                 this.scrollInfo = [
                     { container: '', heightNum: 2.2, height: 0 },
                     { container: '', heightNum: 1.8, height: 0 },
-                    { container: '', heightNum: 1.5, height: 0 },
+                    { container: '', heightNum: 1.7, height: 0 },
                     { container: '', heightNum: 0.8, height: 0 },
                     { container: '', heightNum: 0.9, height: 0 },
                 ];
@@ -387,9 +387,9 @@ export default {
                 this.scrollInfo = [
                     { container: '', heightNum: 1.5, height: 0 },
                     { container: '', heightNum: 1.8, height: 0 },
-                    { container: '', heightNum: 2.1, height: 0 },
+                    { container: '', heightNum: 2.3, height: 0 },
                     { container: '', heightNum: 0.6, height: 0 },
-                    { container: '', heightNum: 0.9, height: 0 },
+                    { container: '', heightNum: 1, height: 0 },
                 ];
             }
 
