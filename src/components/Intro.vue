@@ -54,7 +54,7 @@
             </div>
 
             <div class="box-intro-groups">
-                <div class="people">
+                <div class="rocket">
                     <div class="main-message">언제, 어디서든 빠르게</div>
                     <div class="sub-message">
                         출발지부터 목적지까지 이동할때
@@ -62,7 +62,7 @@
                         실시간으로 현재 위치를 확인합니다.
                     </div>
                 </div>
-                <div class="rocket">
+                <div class="people">
                     <div class="main-message">바쁜 출근시간, 효율적으로</div>
                     <div class="sub-message">
                         알림 스케줄 설정으로
@@ -130,8 +130,8 @@
                         </div>
 
                         <div class="technology">
-                            <div class="main-title">누구에게나 행복한 선택</div>
-                            <div class="sub-title">누구나 사용할 수 있는 기술은 더 많은 사람을 위한 것이어야 한다고 믿습니다.</div>
+                            <div class="main-title">기술로 이어지는 공동체</div>
+                            <div class="sub-title">버스터는 기술을 통해 도시의 연결을 돕고, 사람과 사람을 더 가깝게 만듭니다.</div>
                         </div>
 
                     </div>
@@ -156,16 +156,14 @@
             <div class="message main">
                 똑똑한 이동,버스터가 바꾸는 일상
             </div>
-            <div class="message sub mt14">
+            <div class="message sub mt18">
                 우리는 단순한 길찾기를 넘어, 이동의 모든 순간을 연결합니다
             </div>
-            <div class="message sub mt4">실시간 혼잡도 기반 경로 안내, 간편한 통합
-                결제, 일정에
-                맞춘 알림, 그리고 쓸수록 보상이 쌓이는 리워드까지
+            <div class="message sub mt4">
+                실시간 혼잡도 기반 경로 안내, 간편한 통합 결제, 일정에 맞춘 알림, 그리고 쓸수록 보상이 쌓이는 리워드까지
             </div>
-            <div class="message sub mt4">버스터는 더 빠르고 여유로운 이동을 통해 도시
-                생활을
-                바꿔갑니다.
+            <div class="message sub mt8">
+                버스터는 더 빠르고 여유로운 이동을 통해 도시 생활을 바꿔갑니다.
             </div>
 
             <div class="introduce-group">
@@ -209,7 +207,8 @@
         </div>
 
         <div id="section-3" class="section">
-            <div class="message main">
+            <div class="radius-box">Values</div>
+            <div class="message main mt16">
                 스마트한 이동, 버스터와 함께
             </div>
             <div class="message sub mt14">
@@ -369,15 +368,15 @@ export default {
                 this.scrollInfo = [
                     { container: '', heightNum: 2.4, height: 0 },
                     { container: '', heightNum: 1.8, height: 0 },
-                    { container: '', heightNum: 2.7, height: 0 },
-                    { container: '', heightNum: 0.7, height: 0 },
+                    { container: '', heightNum: 2.9, height: 0 },
+                    { container: '', heightNum: 1, height: 0 },
                     { container: '', heightNum: 1.5, height: 0 },
                 ];
             } else if (window.innerWidth < 1024) {
                 // 태블릿
                 this.scrollInfo = [
                     { container: '', heightNum: 2.2, height: 0 },
-                    { container: '', heightNum: 1.8, height: 0 },
+                    { container: '', heightNum: 2, height: 0 },
                     { container: '', heightNum: 1.7, height: 0 },
                     { container: '', heightNum: 0.8, height: 0 },
                     { container: '', heightNum: 0.9, height: 0 },
@@ -387,8 +386,8 @@ export default {
                 this.scrollInfo = [
                     { container: '', heightNum: 1.5, height: 0 },
                     { container: '', heightNum: 1.8, height: 0 },
-                    { container: '', heightNum: 2.3, height: 0 },
-                    { container: '', heightNum: 0.6, height: 0 },
+                    { container: '', heightNum: 2, height: 0 },
+                    { container: '', heightNum: 1, height: 0 },
                     { container: '', heightNum: 1, height: 0 },
                 ];
             }
@@ -435,6 +434,7 @@ export default {
             this.activateVisibleElements('.experience');
             this.activateVisibleElements('.time');
             this.activateVisibleElements('.question-1, .question-2, .question-3');
+            this.activateVisibleElements('.radius-box');
             this.showSection();
         },
 
