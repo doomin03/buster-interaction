@@ -6,7 +6,7 @@
                 <div class="header-logo">
                     <div class="icon"></div>
                 </div>
-                <div class="header-nav" v-if="!mobile">
+                <div class="header-nav" v-if="pc">
                     <button class="nav-item" @click="moveSection(0)">About</button>
                     <button class="nav-item" @click="moveSection(1)">Vision</button>
                     <button class="nav-item" @click="moveSection(2)">Features</button>
@@ -14,7 +14,7 @@
                     <button class="nav-item" @click="moveSection(4)">FAQ</button>
                 </div>
                 <button class="download-btn">앱 다운로드</button>
-                <div class="menu-icon" v-if="mobile" @click="showMenu">
+                <div class="menu-icon" v-if="!pc" @click="showMenu">
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
@@ -57,25 +57,25 @@
                 <div class="rocket">
                     <div class="main-message">언제, 어디서든 빠르게</div>
                     <div class="sub-message">
-                        출발지부터 목적지까지 이동할때
-                        버스, 지하철, 도보를 활용한 경로를 안내하고,
-                        실시간으로 현재 위치를 확인합니다.
+                        출발지부터 목적지까지 이동할때 <br v-if="pc">
+                        버스, 지하철, 도보를 활용한 경로를 안내하고, <br v-if="pc">
+                        실시간으로 현재 위치를 확인합니다. <br v-if="pc">
                     </div>
                 </div>
                 <div class="people">
                     <div class="main-message">바쁜 출근시간, 효율적으로</div>
                     <div class="sub-message">
-                        알림 스케줄 설정으로
-                        대중교통 도착시간을 알림 받아
-                        목적지까지 늦지 않게 도착할 수 있어요.
+                        알림 스케줄 설정으로  <br v-if="pc">
+                        대중교통 도착시간을 알림 받아  <br v-if="pc">
+                        목적지까지 늦지 않게 도착할 수 있어요.  <br v-if="pc">
                     </div>
                 </div>
                 <div class="setting">
                     <div class="main-message">알뜰한 리워드 적립</div>
                     <div class="sub-message">
-                        보상형 광고를 시청하거나,
-                        승하차 정보를 입력하여 리워드를
-                        적립하고 기프티콘으로 교환해요.
+                        보상형 광고를 시청하거나,  <br v-if="pc">
+                        승하차 정보를 입력하여 리워드를 <br v-if="pc">
+                        적립하고 기프티콘으로 교환해요. <br v-if="pc">
                     </div>
                 </div>
             </div>
@@ -86,7 +86,9 @@
                 <div class="vision-logo">Buster Vision</div>
                 <div class="vision-title">
                     <div class="message main ta-s">
-                        혁신으로 <br> 만들어가는 지속 가능한 미래
+                        혁신으로  <br v-if="tablet">
+                        만들어가는 지속 <br v-if="tablet">
+                        가능한 미래
                     </div>
                     <div class="message sub ta-s">
                         버스터는 환경과 사회를 고려한 스마트한 선택으로,
@@ -98,12 +100,12 @@
                     <div class="person">
                         <div class="image"></div>
                         <div class="main-title">
-                            복잡함은 피하는
+                            복잡함은 피하는 <br v-if="pc">
                             똑똑한 이동
                         </div>
                         <div class="sub-title">
-                            혼잡도 분석을 통해 도로와 정류장의 붐빔을
-                            분산합니다. 개인의 선택이 도시 전체의 흐름을
+                            혼잡도 분석을 통해 도로와 정류장의 붐빔을 <br v-if="pc">
+                            분산합니다. 개인의 선택이 도시 전체의 흐름을 <br v-if="pc">
                             바꾸는 데 기여합니다.
                         </div>
                     </div>
@@ -111,12 +113,16 @@
                         <div class="happy">
                             <div class="main-title">누구에게나 행복한 선택</div>
                             <div class="sub-title">
-                                누구나 사용할 수 있는 기술은 더 많은 사람을 위한 것이어야 한다고 믿습니다.
+                                누구나 사용할 수 있는 기술은 더 많은 <br v-if="pc">
+                                사람을 위한 것이어야 한다고 믿습니다.
                             </div>
                         </div>
                         <div class="carbon">
-                            <div class="main-title">더 적은 탄소, 더 나은 선택</div>
-                            <div class="sub-title">효율적인 이동 경로는 탄소 배출을 줄이는 실천이 됩니다. 버스터는 매일의 이동을 더 친환경적으로 만들어줍니다.</div>
+                            <div class="main-title">
+                                더 적은 탄소, <br v-if="pc">
+                                더 나은 선택
+                            </div>
+                            <div class="sub-title mt10">효율적인 이동 경로는 탄소 배출을 줄이는 실천이 됩니다. 버스터는 매일의 이동을 더 친환경적으로 만들어줍니다.</div>
                             <div class="image"></div>
                         </div>
 
@@ -126,12 +132,18 @@
                         <div class="subway">
                             <div class="image"></div>
                             <div class="main-title">함께 만드는 교통 생태계</div>
-                            <div class="sub-title">사용자의 참여로 수집된 정보를 통해 서비스 품질을 높입니다. 우리는 함께 더 나은 교통 생태계를 만들어갑니다.</div>
+                            <div class="sub-title">
+                                사용자의 참여로 수집된 정보를 통해 서비스 <br v-if="pc">
+                                품질을 높입니다. 우리는 함께 더 나은 <br v-if="pc">
+                                교통 생태계를 만들어갑니다.
+                            </div>
                         </div>
 
                         <div class="technology">
                             <div class="main-title">기술로 이어지는 공동체</div>
-                            <div class="sub-title">버스터는 기술을 통해 도시의 연결을 돕고, 사람과 사람을 더 가깝게 만듭니다.</div>
+                            <div class="sub-title">
+                                버스터는 기술을 통해 도시의 연결을 돕고,<br v-if="pc">
+                                사람과 사람을 더 가깝게 만듭니다.</div>
                         </div>
 
                     </div>
@@ -139,11 +151,11 @@
                 </div>
             </div>
 
-            <div class="vision-message mt192" v-if="!mobile">
+            <div class="vision-message mt192" v-if="pc">
                 버스터는 실시간 도착
                 정보부터 혼잡도, 환승 경로까지
             </div>
-            <div class="vision-message" v-if="!mobile">
+            <div class="vision-message" v-if="pc">
                 한 번에 보여주는 대중교통 안내
                 서비스입니다.
             </div>
@@ -343,6 +355,8 @@ export default {
             viewOffsetY: 0,
 
             mobile: false,
+            tablet: false,
+            pc: false,
 
             menu : false,
         };
@@ -361,30 +375,32 @@ export default {
     },
     methods: {
         setLayout() {
-            this.mobile = window.innerWidth < 1152;
+            this.mobile = window.innerWidth < 600;
+            this.tablet = window.innerWidth < 1024 && window.innerWidth > 600;
+            this.pc =  window.innerWidth > 1024
 
             if (window.innerWidth < 600) {
                 // 모바일
                 this.scrollInfo = [
                     { container: '', heightNum: 2.4, height: 0 },
-                    { container: '', heightNum: 1.8, height: 0 },
+                    { container: '', heightNum: 2.1, height: 0 },
                     { container: '', heightNum: 2.9, height: 0 },
-                    { container: '', heightNum: 1, height: 0 },
+                    { container: '', heightNum: 1.2, height: 0 },
                     { container: '', heightNum: 1.5, height: 0 },
                 ];
             } else if (window.innerWidth < 1024) {
                 // 태블릿
                 this.scrollInfo = [
                     { container: '', heightNum: 2.2, height: 0 },
-                    { container: '', heightNum: 2, height: 0 },
+                    { container: '', heightNum: 2.2, height: 0 },
                     { container: '', heightNum: 1.7, height: 0 },
-                    { container: '', heightNum: 0.8, height: 0 },
+                    { container: '', heightNum: 0.9, height: 0 },
                     { container: '', heightNum: 0.9, height: 0 },
                 ];
             } else {
                 // 데스크탑
                 this.scrollInfo = [
-                    { container: '', heightNum: 1.5, height: 0 },
+                    { container: '', heightNum: 1.6, height: 0 },
                     { container: '', heightNum: 1.8, height: 0 },
                     { container: '', heightNum: 2, height: 0 },
                     { container: '', heightNum: 1, height: 0 },

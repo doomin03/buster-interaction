@@ -228,7 +228,7 @@
     .vision-title {
         margin-top: 12px;
         display: grid;
-        grid-template-columns: 330px 400px;
+        grid-template-columns: 440px 400px;
         justify-content: space-between;
     }
 
@@ -280,7 +280,7 @@
 
         .happy {
             @include container(#F8FFDD, 24, 0.3);
-            height: 214px;
+            min-height: 214px;
 
             .sub-title {
                 margin-top: 10px;
@@ -290,7 +290,7 @@
         .technology {
             margin-top: 16px;
             @include container(#F0FFB5, 24, 0.35);
-
+            max-height: 122px;
             .sub-title {
                 margin-top: 10px;
             }
@@ -300,13 +300,27 @@
 
     @media (min-width: 600px) and (max-width: 1023px) {
         .vision-title {
-            grid-template-columns: 350px 245px;
+            grid-template-columns: 300px 300px;
+            .message{
+                &.main{
+                    font-size: 36px;
+                }
+            }
         }
 
         .vision-info-groups {
             display: flex;
             flex-direction: column;
             gap: 16px;
+
+            .happy {
+                @include container(#F8FFDD, 24, 0.3);
+                min-height: 169px;
+
+                .sub-title {
+                    margin-top: 10px;
+                }
+            }
 
             .person {
                 @include image-container("@/assets/image/vision1.png", #F5F4F6, 0.3071, 0.3, top);
